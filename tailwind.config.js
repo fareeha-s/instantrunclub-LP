@@ -9,6 +9,9 @@ export default {
       fontFamily: {
         sans: ['Plus Jakarta Sans', 'sans-serif'],
       },
+      screens: {
+        'xs': '375px',
+      },
     },
   },
   plugins: [],

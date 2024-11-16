@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <>
       <motion.h1 
-        className="text-[40px] sm:text-[55px] md:text-[70px] font-[500] italic 
+        className="text-[28px] xs:text-[35px] sm:text-[55px] md:text-[70px] font-[500] italic 
                    text-[#F0F0F0]/80 tracking-[0.06em] leading-[1.1em] mb-2 sm:mb-3 
                    lowercase whitespace-nowrap px-4"
         initial={{ opacity: 0, x: -100 }}

@@ -36,27 +36,23 @@ export default function WaitlistForm() {
   return (
     <motion.form 
       onSubmit={handleSubmit}
-      className="flex gap-0 w-full max-w-[320px] sm:max-w-md mx-auto px-4"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 1.8, duration: 0.8 }}
+      className="flex w-[90%] xs:w-[80%] sm:w-[70%] max-w-md mx-auto"
     >
       <input
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value.toLowerCase())}
         placeholder="email address"
-        className="flex-1 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-l-md 
-                 text-white placeholder-white/60 text-sm lowercase
-                 focus:outline-none border-r border-white/10
-                 transition-all duration-300"
+        className="flex-1 px-2 xs:px-4 py-2 bg-white/10 backdrop-blur-sm rounded-l-md 
+                 text-white placeholder-white/60 text-xs xs:text-sm lowercase
+                 focus:outline-none border-r border-white/10"
         required
         disabled={isSubmitting}
       />
       <motion.button
         type="submit"
-        className="px-4 py-2 bg-[#D2E3D5]/30 backdrop-blur-sm rounded-r-md 
-                 text-white text-sm whitespace-nowrap lowercase
+        className="px-2 xs:px-4 py-2 bg-[#D2E3D5]/30 backdrop-blur-sm rounded-r-md 
+                 text-white text-xs xs:text-sm whitespace-nowrap
                  hover:bg-[#D2E3D5]/40 transition-all duration-200
                  disabled:opacity-50"
         whileHover={{ scale: 1.02 }}
