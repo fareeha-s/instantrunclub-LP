@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import BackgroundVideo from './components/BackgroundVideo';
 import WaitlistForm from './components/WaitlistForm';
@@ -6,9 +6,16 @@ import RunnerEmojis from './components/RunnerEmojis';
 import Header from './components/Header';
 
 export default function App() {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Set a minimum loading time to prevent flash
+    setTimeout(() => setIsLoaded(true), 500);
+  }, []);
+
   return (
-    <div className="relative min-h-screen bg-black">
-      <BackgroundVideo />
+    <div className="relative min-h-screen bg-[#D2E3D5]">
+      {isLoaded && <BackgroundVideo />}
       
       <div className="relative z-20 min-h-screen flex flex-col items-center justify-center 
                       px-2 sm:px-4 lg:px-8">

@@ -8,7 +8,10 @@ export default function BackgroundVideo() {
         loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        webkit-playsinline="true"
+        x5-playsinline="true"
+        className="object-cover w-full h-full"
+        preload="auto"
       >
         <source src="/irc-lp-video.mp4" type="video/mp4" />
       </video>
