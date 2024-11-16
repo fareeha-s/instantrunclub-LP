@@ -2,6 +2,14 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/instant-run-club/',
-  plugins: [react()]
+  base: '/',
+  plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        404: './src/404.html'
+      }
+    }
+  }
 })
