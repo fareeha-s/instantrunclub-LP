@@ -12,19 +12,8 @@ export default function App() {
       
       <div className="relative z-20 min-h-screen flex flex-col items-center justify-center 
                       px-2 sm:px-4 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center w-full max-w-xl"
-        >
-          <Header />
-          <WaitlistForm />
-          <RunnerEmojis />
-        </motion.div>
-
         <motion.div 
-          className="absolute bottom-6 text-white/70 text-xs tracking-wide"
+          className="absolute top-6 text-white/70 text-sm tracking-wide"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2, duration: 0.8 }}
@@ -37,6 +26,17 @@ export default function App() {
           >
             a product of kineship
           </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center w-full max-w-xl"
+        >
+          <Header />
+          <WaitlistForm />
+          <RunnerEmojis />
         </motion.div>
       </div>
     </div>
