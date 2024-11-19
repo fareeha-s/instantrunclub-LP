@@ -14,7 +14,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#D2E3D5]">
+    <div className="relative min-h-screen">
       {isLoaded && <BackgroundVideo />}
       
       <div className="relative z-20 min-h-screen flex flex-col items-center justify-center 

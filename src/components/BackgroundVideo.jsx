@@ -15,18 +15,18 @@ export default function BackgroundVideo() {
   return (
     <div className="absolute inset-0 w-full h-full overflow-hidden">
       {isLowPower ? (
-        // Only show static image in low power mode
         <img 
-          src="/irc-lp-poster.jpg" 
-          alt="background" 
+          src="/irc-lp-poster.png" 
+          alt=""
+          onError={(e) => {e.target.style.display = 'none'}}
           className="absolute inset-0 w-full h-full object-cover"
         />
       ) : (
-        // Show video with image fallback otherwise
         <>
           <img 
-            src="/irc-lp-poster.jpg" 
-            alt="background" 
+            src="/irc-lp-poster.png" 
+            alt=""
+            onError={(e) => {e.target.style.display = 'none'}}
             className="absolute inset-0 w-full h-full object-cover"
           />
           <video
@@ -37,7 +37,7 @@ export default function BackgroundVideo() {
             webkit-playsinline="true"
             x5-playsinline="true"
             className="absolute inset-0 w-full h-full object-cover"
-            poster="/irc-lp-poster.jpg"
+            poster="/irc-lp-poster.png"
             preload="auto"
           >
             <source src="/irc-lp-video.mp4" type="video/mp4" />
