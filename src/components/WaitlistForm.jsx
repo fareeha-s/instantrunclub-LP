@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 export default function WaitlistForm() {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,8 +24,7 @@ export default function WaitlistForm() {
       });
       
       if (response.ok) {
-        // Success handling
-        setEmail('');
+        setIsSubmitted(true);
       }
     } catch (error) {
       console.error('Error:', error);
@@ -41,11 +41,14 @@ export default function WaitlistForm() {
       <input
         type="email"
         value={email}
-        onChange={(e) => setEmail(e.target.value.toLowerCase())}
-        placeholder="email address"
+        onChange={(e) => {
+          setEmail(e.target.value.toLowerCase());
+          if (isSubmitted) setIsSubmitted(false);
+        }}
+        placeholder={isSubmitted ? "" : "email address"}
         className="flex-1 px-2 xs:px-4 py-2 bg-white/10 backdrop-blur-sm rounded-l-md 
                  text-white placeholder-white/60 text-xs xs:text-sm lowercase
-                 focus:outline-none border-r border-white/10"
+                 focus:outline-none [margin-right:-1px]"
         required
         disabled={isSubmitting}
       />
@@ -54,12 +57,12 @@ export default function WaitlistForm() {
         className="px-2 xs:px-4 py-2 bg-[#D2E3D5]/30 backdrop-blur-sm rounded-r-md 
                  text-white text-xs xs:text-sm whitespace-nowrap
                  hover:bg-[#D2E3D5]/40 transition-all duration-200
-                 disabled:opacity-50"
+                 disabled:opacity-50 relative"
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         disabled={isSubmitting}
       >
-        {isSubmitting ? "joining..." : "waitlist →"}
+        {isSubmitting ? "joining..." : isSubmitted ? "joined ✓" : "waitlist →"}
       </motion.button>
     </motion.form>
   );
