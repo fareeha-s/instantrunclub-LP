@@ -47,9 +47,9 @@ export default function WaitlistForm() {
         }}
         placeholder={isSubmitted ? "" : "email address"}
         className="flex-1 px-2 xs:px-4 py-2 bg-white/10 backdrop-blur-sm 
-                 rounded-l-md rounded-r-none 
+                 rounded-md xs:rounded-l-md xs:rounded-r-none 
                  text-white placeholder-white/60 text-xs xs:text-sm lowercase
-                 focus:outline-none [margin-right:-1px]"
+                 focus:outline-none border-0"
         required
         disabled={isSubmitting}
       />
@@ -59,7 +59,7 @@ export default function WaitlistForm() {
                  rounded-md xs:rounded-r-md xs:rounded-l-none 
                  text-white text-xs xs:text-sm whitespace-nowrap
                  transition-all duration-200
-                 disabled:opacity-50 relative
+                 disabled:opacity-50 relative border-0
                  -webkit-tap-highlight-color: transparent
                  ${isSubmitted ? 'bg-[#D2E3D5]/50' : 'bg-[#D2E3D5]/30 hover:bg-[#D2E3D5]/40 active:bg-[#D2E3D5]/40'}`}
         whileHover={{ scale: 1.02 }}
