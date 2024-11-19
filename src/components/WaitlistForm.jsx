@@ -46,7 +46,8 @@ export default function WaitlistForm() {
           if (isSubmitted) setIsSubmitted(false);
         }}
         placeholder={isSubmitted ? "" : "email address"}
-        className="flex-1 px-2 xs:px-4 py-2 bg-white/10 backdrop-blur-sm rounded-l-md 
+        className="flex-1 px-2 xs:px-4 py-2 bg-white/10 backdrop-blur-sm 
+                 rounded-l-md rounded-r-none 
                  text-white placeholder-white/60 text-xs xs:text-sm lowercase
                  focus:outline-none [margin-right:-1px]"
         required
@@ -54,10 +55,13 @@ export default function WaitlistForm() {
       />
       <motion.button
         type="submit"
-        className="px-2 xs:px-4 py-2 bg-[#D2E3D5]/30 backdrop-blur-sm rounded-r-md 
+        className={`px-2 xs:px-4 py-2 backdrop-blur-sm 
+                 rounded-md xs:rounded-r-md xs:rounded-l-none 
                  text-white text-xs xs:text-sm whitespace-nowrap
-                 hover:bg-[#D2E3D5]/40 transition-all duration-200
-                 disabled:opacity-50 relative"
+                 transition-all duration-200
+                 disabled:opacity-50 relative
+                 -webkit-tap-highlight-color: transparent
+                 ${isSubmitted ? 'bg-[#D2E3D5]/50' : 'bg-[#D2E3D5]/30 hover:bg-[#D2E3D5]/40 active:bg-[#D2E3D5]/40'}`}
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
         disabled={isSubmitting}
